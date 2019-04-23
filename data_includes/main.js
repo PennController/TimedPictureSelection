@@ -1,9 +1,9 @@
 PennController.ResetPrefix(null);
-PennController.Debug();
 
 
 PennController(
     defaultText
+        .settings.center()
         .print()
     ,
     newText("<p>Welcome to this experiment.</p>")
@@ -18,9 +18,11 @@ PennController(
         .settings.global()
     ,
     newTextInput("ID", "")
+        .settings.center()
         .print()
     ,
     newButton("Start")
+        .settings.center()
         .print()
         .wait( getTextInput("ID").testNot.text("") )
     ,
@@ -47,6 +49,7 @@ PennController.Template( "fulldesign.csv" ,
         ,
         newSelector("choice")
             .settings.log()
+            .settings.frame("dotted 2px purple")
             .settings.disable()
         ,
         newCanvas(650,300)
@@ -56,6 +59,7 @@ PennController.Template( "fulldesign.csv" ,
         ,
         getSelector("choice")
             .shuffle()
+            .settings.keys("F","J")
         ,
         newTimer(500)
             .start()
@@ -71,6 +75,10 @@ PennController.Template( "fulldesign.csv" ,
         getSelector("choice")
             .settings.enable()
             .settings.once()
+            .wait()
+        ,
+        newTimer(500)
+            .start()
             .wait()
         ,
         getAudio("description")

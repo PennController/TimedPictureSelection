@@ -1,9 +1,9 @@
 AudioFile,Description,PluralImageFile,SingularImageFile,Item,Group,Ending,Duration
-1fishSquareTank.mp3,The fish swims in a tank which is perfectly square,2fishRoundTank.png,1fishSquareTank.png,fish,A,3rd,2600
-2fishRoundTank.mp3,The fish swim in a tank which is perfectly round,2fishRoundTank.png,1fishSquareTank.png,fish,B,1st,2600
-1deerDenseWood.mp3,The deer runs in a wood which is extremely dense,2deerSparseWood.png,1deerDenseWood.png,deer,B,3rd,2500
-2deerSparseWood.mp3,The deer run in a wood which is extremely sparse,2deerSparseWood.png,1deerDenseWood.png,deer,A,1st,2500
-1sheepRedPen.mp3,The sheep roams in a pen which is strikingly red,2sheepBluePen.png,1sheepRedPen.png,sheep,A,3rd,2200
-2sheepBluePen.mp3,The sheep roam in a pen which is strikingly blue,2sheepBluePen.png,1sheepRedPen.png,sheep,B,1st,2200
-1mooseNewPark.mp3,The moose walks in a park which is visibly new,2mooseOldPark.png,1mooseNewPark.png,moose,B,3rd,2200
-2mooseOldPark.mp3,The moose walk in a park which is visibly old,2mooseOldPark.png,1mooseNewPark.png,moose,A,1st,2200
+1fishSquareTank.mp3,The fish swims in a tank which is perfectly square,2fishRoundTank.png,1fishSquareTank.png,fish,A,-s,2600
+2fishRoundTank.mp3,The fish swim in a tank which is perfectly round,2fishRoundTank.png,1fishSquareTank.png,fish,B,No-s,2600
+1deerDenseWood.mp3,The deer runs in a wood which is extremely dense,2deerSparseWood.png,1deerDenseWood.png,deer,B,-s,2500
+2deerSparseWood.mp3,The deer run in a wood which is extremely sparse,2deerSparseWood.png,1deerDenseWood.png,deer,A,No-s,2500
+1sheepRedPen.mp3,The sheep roams in a pen which is strikingly red,2sheepBluePen.png,1sheepRedPen.png,sheep,A,-s,2200
+2sheepBluePen.mp3,The sheep roam in a pen which is strikingly blue,2sheepBluePen.png,1sheepRedPen.png,sheep,B,No-s,2200
+1mooseNewPark.mp3,The moose walks in a park which is visibly new,2mooseOldPark.png,1mooseNewPark.png,moose,B,-s,2200
+2mooseOldPark.mp3,The moose walk in a park which is visibly old,2mooseOldPark.png,1mooseNewPark.png,moose,A,No-s,2200

@@ -1,9 +1,14 @@
 PennController.ResetPrefix(null);
 
+Header(
+    // empty header
+)
+.log( "ID" , getVar("ID") )
 
-PennController(
+
+newTrial(
     defaultText
-        .settings.center()
+        .center()
         .print()
     ,
     newText("<p>Welcome to this experiment.</p>")
@@ -15,28 +20,27 @@ PennController(
     newText("<p>Please type in your ID below and then click on the Start button to start the experiment.</p>")
     ,
     newVar("ID","")
-        .settings.global()
+        .global()
     ,
     newTextInput("ID", "")
-        .settings.center()
+        .center()
         .print()
     ,
     newButton("Start")
-        .settings.center()
+        .center()
         .print()
         .wait( getTextInput("ID").testNot.text("") )
     ,
     getVar("ID")
         .set( getTextInput("ID") )
 )
-.log( "ID" , getVar("ID") )
 
 
-PennController.Template( "fulldesign.csv" ,
-    row => PennController(
+Template( "fulldesign.csv" ,
+    row => newTrial(
         newText("sentence", row.Sentence)
-            .settings.center()
-            .settings.hidden()
+            .center()
+            .hidden()
             .print()
         ,
         newTimer(200)
@@ -44,37 +48,37 @@ PennController.Template( "fulldesign.csv" ,
             .wait()
         ,
         defaultImage
-            .settings.size(300,300)
-            .settings.selector("choice")
+            .size(300,300)
+            .selector("choice")
         ,
         newSelector("choice")
-            .settings.log()
-            .settings.frame("dotted 2px purple")
-            .settings.disable()
+            .log()
+            .frame("dotted 2px purple")
+            .disable()
         ,
         newCanvas(650,300)
-            .settings.add(   0 , 0 , newImage(row.PictureSg) )
-            .settings.add( 350 , 0 , newImage(row.PicturePl) )
+            .add(   0 , 0 , newImage(row.PictureSg) )
+            .add( 350 , 0 , newImage(row.PicturePl) )
             .print()
         ,
         getSelector("choice")
             .shuffle()
-            .settings.keys("F","J")
+            .keys("F","J")
         ,
         newTimer(500)
             .start()
             .wait()
         ,
         newAudio("description", row.Audio)
-            .settings.log()
+            .log()
             .play()
         ,
         getText("sentence")
             .unfold(row.Duration)
         ,
         getSelector("choice")
-            .settings.enable()
-            .settings.once()
+            .enable()
+            .once()
             .wait()
         ,
         newTimer(500)
@@ -84,7 +88,6 @@ PennController.Template( "fulldesign.csv" ,
         getAudio("description")
             .wait("first")
     )
-    .log( "ID"       , getVar("ID") )
     .log( "Item"     , row.Item     )
     .log( "Group"    , row.Group    )
     .log( "Ending"   , row.Ending   )
@@ -92,14 +95,14 @@ PennController.Template( "fulldesign.csv" ,
 )
 
 
-PennController.SendResults();
+SendResults();
 
 
-PennController(
+newTrial(
     newText("Thank you for your participation!")
         .print()
     ,
-    newText("<p><a href='https://confirmationlink/' target='_blank'>Click here to validate your submission</a></p>")
+    newText("<p><a href='https://www.pcibex.net/' target='_blank'>Click here to validate your submission</a></p>")
         .print()
     ,
     newTimer(1)

@@ -19,9 +19,6 @@ newTrial(
     ,
     newText("<p>Please type in your ID below and then click on the Start button to start the experiment.</p>")
     ,
-    newVar("ID","")
-        .global()
-    ,
     newTextInput("ID", "")
         .center()
         .print()
@@ -31,7 +28,8 @@ newTrial(
         .print()
         .wait( getTextInput("ID").testNot.text("") )
     ,
-    getVar("ID")
+    newVar("ID","")
+        .global()
         .set( getTextInput("ID") )
 )
 
@@ -47,14 +45,14 @@ Template( "fulldesign.csv" ,
             .start()
             .wait()
         ,
-        defaultImage
-            .size(300,300)
-            .selector("choice")
-        ,
         newSelector("choice")
             .log()
             .frame("dotted 2px purple")
             .disable()
+        ,
+        defaultImage
+            .size(300,300)
+            .selector("choice")
         ,
         newCanvas(650,300)
             .add(   0 , 0 , newImage(row.PictureSg) )
